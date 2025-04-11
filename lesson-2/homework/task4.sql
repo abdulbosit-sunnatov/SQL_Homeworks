@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS student;
+
 CREATE TABLE student (
     id INT PRIMARY KEY IDENTITY(1,1),
     name VARCHAR(50),

@@ -59,25 +59,9 @@ VALUES
 (249, 'Watch', 'Fashion', 200.00, 40),
 (250, 'Handbag', 'Fashion', 75.00, 60);
 
-WITH MaxPriceProducts AS (
-    SELECT 
-        Category,
-        ProductID,
-        ProductName,
-        Price,
-        Stock,
-        IIF(Stock = 0, 'Out of Stock', 
-            IIF(Stock BETWEEN 1 AND 10, 'Low Stock', 'In Stock')) AS InventoryStatus,
-        ROW_NUMBER() OVER (PARTITION BY Category ORDER BY Price DESC) AS RowNum
-    FROM Products
-)
-SELECT 
-    Category,
-    ProductID,
-    ProductName,
-    Price,
-    InventoryStatus
-FROM MaxPriceProducts
-WHERE RowNum = 1
-ORDER BY Price DESC
+select category, max(price) as max_price, IIF(sum(Stock) = 0, 'Out of Stock', 
+            IIF(sum(Stock) BETWEEN 1 AND 10, 'Low Stock', 'In Stock')) AS InventoryStatus
+from Products 
+group by category
+order by max_price desc
 OFFSET 5 ROWS;
