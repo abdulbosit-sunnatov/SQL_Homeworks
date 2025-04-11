@@ -7,15 +7,6 @@ CREATE TABLE Employees (
     HireDate DATE
 );
 
--- Create Employees Table for Retail Company
-CREATE TABLE Employees (
-    EmployeeID INT PRIMARY KEY,
-    FirstName VARCHAR(50),
-    LastName VARCHAR(50),
-    Department VARCHAR(50),
-    Salary DECIMAL(10,2),
-    HireDate DATE
-);
 
 INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary, HireDate) VALUES
 (1, 'Alice', 'Brown', 'Sales', 50000, '2018-01-20'),
@@ -39,39 +30,6 @@ INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary, Hire
 (19, 'Steve', 'Jackson', 'Operations', 56000, '2019-11-07'),
 (20, 'Tina', 'White', 'Finance', 110000, '2016-01-03');
 
-
-CREATE TABLE Orders (
-    OrderID INT PRIMARY KEY,
-    CustomerName VARCHAR(100),
-    OrderDate DATE,
-    TotalAmount DECIMAL(10,2),
-    Status VARCHAR(20) CHECK (Status IN ('Pending', 'Shipped', 'Delivered', 'Cancelled'))
-);
-
-INSERT INTO Orders (OrderID, CustomerName, OrderDate, TotalAmount, Status)
-VALUES
-(101, 'John Carter', '2024-01-12', 250.50, 'Pending'),
-(102, 'Sarah Lin', '2024-02-08', 500.00, 'Shipped'),
-(103, 'Michael Ray', '2024-03-03', 120.75, 'Delivered'),
-(104, 'Nina Patel', '2024-04-01', 89.99, 'Cancelled'),
-(105, 'Oliver Stone', '2024-04-09', 340.20, 'Shipped');
-
-
-CREATE TABLE Products (
-    ProductID INT PRIMARY KEY,
-    ProductName VARCHAR(100),
-    Category VARCHAR(50),
-    Price DECIMAL(10,2),
-    Stock INT
-);
-
-INSERT INTO Products (ProductID, ProductName, Category, Price, Stock)
-VALUES
-(201, 'Wireless Mouse', 'Electronics', 25.99, 150),
-(202, 'Keyboard', 'Electronics', 45.00, 100),
-(203, 'Office Chair', 'Furniture', 120.00, 30),
-(204, 'Notebook', 'Stationery', 2.50, 500),
-(205, 'Pen Pack', 'Stationery', 5.99, 300);
 
 WITH Top10Percent AS (
     SELECT TOP 10 PERCENT
