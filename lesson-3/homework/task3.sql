@@ -1,10 +1,10 @@
-CREATE TABLE Products (
-    ProductID INT PRIMARY KEY,
-    ProductName VARCHAR(100),
-    Category VARCHAR(50),
-    Price DECIMAL(10,2),
-    Stock INT
-);
+-- CREATE TABLE Products (
+--     ProductID INT PRIMARY KEY,
+--     ProductName VARCHAR(100),
+--     Category VARCHAR(50),
+--     Price DECIMAL(10,2),
+--     Stock INT
+-- );
 
 INSERT INTO Products (ProductID, ProductName, Category, Price, Stock)
 VALUES
