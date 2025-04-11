@@ -21,3 +21,4 @@ else:
 
 cursor.close()
 conn.close()
+
