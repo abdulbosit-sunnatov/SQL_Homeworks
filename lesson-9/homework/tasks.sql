@@ -38,23 +38,16 @@ FROM EmployeeHierarchy
 ORDER BY Depth, EmployeeID;
 
 --Task 2
-DECLARE @N INT = 10;
 
-WITH FactorialCTE AS (
-    SELECT 
-        Num = 1, 
-        Factorial = CAST(1 AS BIGINT)
-
-    UNION ALL
-
-    SELECT 
-        Num + 1,
-        Factorial * (Num + 1)
-    FROM FactorialCTE
-    WHERE Num < @N
+with Factorial(num,factorial) as (
+    select 1,1
+    union all
+    select 1 + num , factorial*(1 + num)
+    from factorial
+    where num < 10
 )
-SELECT * 
-FROM FactorialCTE;
+
+select * from Factorial
 
 --Task 3
 
