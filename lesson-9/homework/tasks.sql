@@ -42,7 +42,7 @@ ORDER BY Depth, EmployeeID;
 with Factorial(num,factorial) as (
     select 1,1
     union all
-    select 1 + num , factorial*(1 + num)
+    select num + 1 , factorial*(num + 1)
     from factorial
     where num < 10
 )
