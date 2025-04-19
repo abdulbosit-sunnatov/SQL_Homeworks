@@ -37,4 +37,4 @@ MedianValues AS (
 SELECT AVG(CAST(Num AS FLOAT)) AS Median
 FROM MedianValues;
 
-DROP TABLE #MissingZeros;
+
