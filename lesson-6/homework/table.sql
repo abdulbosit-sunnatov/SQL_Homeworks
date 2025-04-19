@@ -1,3 +1,5 @@
+--Table creation
+
 CREATE TABLE Departments (
     departmentID INT PRIMARY KEY IDENTITY(1,1),
     department VARCHAR(50)
@@ -42,56 +44,18 @@ VALUES
     ('Delta', 4),
     ('Omega', NULL);
 
---Task 1
-
-select e.name, d.department 
-from employees e
-join Departments d
-on e.departmentID = d.departmentID
 
 
---Task 2
 
-select e.name, d.department 
-from employees e
-left join Departments d
-on e.departmentID = d.departmentID
 
---Task 3
 
-select e.name, d.department 
-from employees e
-right join Departments d
-on e.departmentID = d.departmentID
 
---Task 4
 
-select e.name, d.department 
-from employees e
-full outer join Departments d
-on e.departmentID = d.departmentID
 
---Task 5
 
-select d.department,e.name, sum(e.salary) as total_salary
-from employees e
-join Departments d
-on e.departmentID = d.departmentID
-group by d.department,e.name
 
---Task 6
 
-select d.department, p.projectName
-from departments d
-cross join Projects p
 
---Task 7
 
-select d.department,e.name, e.salary as emp_salary, p.projectName 
-from employees e    
-join Departments d
-on e.departmentID = d.departmentID
-left join Projects p
-on e.EmployeeID = p.employeeID
 
 
