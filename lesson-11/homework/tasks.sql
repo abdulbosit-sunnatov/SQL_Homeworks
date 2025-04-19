@@ -84,7 +84,6 @@ SELECT * FROM @MissingOrders;
 --Task 3
 
 CREATE VIEW vw_MonthlyWorkSummary AS
--- 1. Total hours worked per employee
 SELECT 
     EmployeeID,
     EmployeeName,
@@ -98,7 +97,6 @@ GROUP BY EmployeeID, EmployeeName, Department
 
 UNION ALL
 
--- 2. Total hours worked per department
 SELECT 
     NULL AS EmployeeID,
     NULL AS EmployeeName,
@@ -112,7 +110,6 @@ GROUP BY Department
 
 UNION ALL
 
--- 3. Average hours worked per department
 SELECT 
     NULL AS EmployeeID,
     NULL AS EmployeeName,
